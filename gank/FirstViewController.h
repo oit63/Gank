@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface FirstViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
+@property (nonatomic) NSArray *news;
 
-
+- (void)afnetworkingGet;
 @end
 

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>4E005105-4794-4DC1-A817-2C5CD71BA763</string>
+	<key>IDESourceControlProjectName</key>
+	<string>gank</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>782FAFC23CF37F177E345BC30851CBADB7ABE21C</key>
+		<string>https://github.com/ForrestAlfred/Gank.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>gank.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>782FAFC23CF37F177E345BC30851CBADB7ABE21C</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/ForrestAlfred/Gank.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>782FAFC23CF37F177E345BC30851CBADB7ABE21C</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>782FAFC23CF37F177E345BC30851CBADB7ABE21C</string>
+			<key>IDESourceControlWCCName</key>
+			<string>gank</string>
+		</dict>
+	</array>
+</dict>
+</plist>
