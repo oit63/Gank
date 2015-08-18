@@ -96,14 +96,7 @@
 //    NSLog(@"results: %@", news); //3
 
     //        NSMutableString *str = [NSMutableString stringWithCapacity:40];
-    for (NSDictionary *result in news) {
-        NSLog(@"标题名称：《%@》, 作者: %@, 发表于：%@,  网址：%@， ",[result objectForKey:@"desc"],[result objectForKey:@"who"],[result objectForKey:@"publishedAt"],[result objectForKey:@"url"]);
-        NSString * publishedTime = [[result objectForKey:@"publishedAt"] substringToIndex:10];
-        //            [str appendString:[NSString stringWithFormat:@"employee's first name is %@,last name is %@\n",[result objectForKey:@"publishedAt"],[result objectForKey:@"url"]]];
-        NSLog(@"%@",publishedTime);
-    }
-    
-    
+
     // Set up the cell.
     NSDictionary *iOSnews = [news objectAtIndex:indexPath.row];
     NSString * desc = [iOSnews objectForKey:@"desc"];
@@ -114,8 +107,8 @@
     cell.textLabel.text = desc;
 //
     cell.frame = CGRectMake(0, 0, 320,[cell.textLabel.text boundingRectWithSize: CGSizeMake(320, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading attributes:[NSDictionary dictionaryWithObjectsAndKeys:cell.textLabel.font, NSFontAttributeName, nil] context:nil].size.height);
-   NSLog(@"cell faf %f",cell.frame.size.height);
-//  
+//   NSLog(@"cell faf %f",cell.frame.size.height);
+//
 //    label.textAlignment = NSTextAlignmentLeft;
 //    label.text = @"Here who";
 
@@ -136,5 +129,12 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+- (void)enumNews {
+    for (NSDictionary *result in news) {
+        NSLog(@"标题名称：《%@》, 作者: %@, 发表于：%@,  网址：%@， ",[result objectForKey:@"desc"],[result objectForKey:@"who"],[result objectForKey:@"publishedAt"],[result objectForKey:@"url"]);
+        NSString * publishedTime = [[result objectForKey:@"publishedAt"] substringToIndex:10];
+        //            [str appendString:[NSString stringWithFormat:@"employee's first name is %@,last name is %@\n",[result objectForKey:@"publishedAt"],[result objectForKey:@"url"]]];
+        NSLog(@"%@",publishedTime);
+    }
+}
 @end
