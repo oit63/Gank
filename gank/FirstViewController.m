@@ -23,7 +23,9 @@
 @implementation FirstViewController
 @synthesize news;
 @synthesize tableView;
-
+/**
+ *  viewdidload
+ */
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
@@ -34,6 +36,9 @@
 //    self.timeZoneNames = [NSTimeZone knownTimeZoneNames];
 }
 
+/**
+ * get
+ */
 - (void)afnetworkingGet {
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     manager.responseSerializer = [AFHTTPResponseSerializer serializer];
