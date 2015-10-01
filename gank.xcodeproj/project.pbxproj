@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		79DCC8F07E02A5CF308E1A90 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F25A65923FCB27E74A6B416 /* libPods.a */; };
+		B65F925C1BB8030200D02A98 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B65F925A1BB8030200D02A98 /* Model.xcdatamodeld */; settings = {ASSET_TAGS = (); }; };
+		B65F92641BB8042400D02A98 /* Post+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = B65F92611BB8042400D02A98 /* Post+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
+		B65F92651BB8042400D02A98 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = B65F92631BB8042400D02A98 /* Post.m */; settings = {ASSET_TAGS = (); }; };
+		B65F92681BB8044400D02A98 /* PostStore.m in Sources */ = {isa = PBXBuildFile; fileRef = B65F92671BB8044400D02A98 /* PostStore.m */; settings = {ASSET_TAGS = (); }; };
 		E41577B41B8314D7004C8A29 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E41577B31B8314D7004C8A29 /* WebViewController.m */; };
 		E4CCDB7D1B81AD43007B2E87 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E4CCDB7C1B81AD43007B2E87 /* main.m */; };
 		E4CCDB801B81AD43007B2E87 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E4CCDB7F1B81AD43007B2E87 /* AppDelegate.m */; };
@@ -33,6 +37,13 @@
 		07FC4A29DF968C40CCD10FD8 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		4F25A65923FCB27E74A6B416 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C61F5F885DF5AD5F2F98DAA /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		B65F925B1BB8030200D02A98 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		B65F92601BB8042400D02A98 /* Post+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Post+CoreDataProperties.h"; sourceTree = "<group>"; };
+		B65F92611BB8042400D02A98 /* Post+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Post+CoreDataProperties.m"; sourceTree = "<group>"; };
+		B65F92621BB8042400D02A98 /* Post.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
+		B65F92631BB8042400D02A98 /* Post.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
+		B65F92661BB8044400D02A98 /* PostStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostStore.h; sourceTree = "<group>"; };
+		B65F92671BB8044400D02A98 /* PostStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostStore.m; sourceTree = "<group>"; };
 		E41577B21B8314D7004C8A29 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
 		E41577B31B8314D7004C8A29 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 		E4CCDB771B81AD43007B2E87 /* gank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gank.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -123,6 +134,13 @@
 				E4CCDB8A1B81AD44007B2E87 /* Images.xcassets */,
 				E4CCDB8C1B81AD44007B2E87 /* LaunchScreen.xib */,
 				E4CCDB7A1B81AD43007B2E87 /* Supporting Files */,
+				B65F925A1BB8030200D02A98 /* Model.xcdatamodeld */,
+				B65F92601BB8042400D02A98 /* Post+CoreDataProperties.h */,
+				B65F92611BB8042400D02A98 /* Post+CoreDataProperties.m */,
+				B65F92621BB8042400D02A98 /* Post.h */,
+				B65F92631BB8042400D02A98 /* Post.m */,
+				B65F92661BB8044400D02A98 /* PostStore.h */,
+				B65F92671BB8044400D02A98 /* PostStore.m */,
 			);
 			path = gank;
 			sourceTree = "<group>";
@@ -290,9 +308,13 @@
 			files = (
 				E4CCDB861B81AD43007B2E87 /* SecondViewController.m in Sources */,
 				E41577B41B8314D7004C8A29 /* WebViewController.m in Sources */,
+				B65F92681BB8044400D02A98 /* PostStore.m in Sources */,
 				E4CCDB801B81AD43007B2E87 /* AppDelegate.m in Sources */,
 				E4CCDB831B81AD43007B2E87 /* FirstViewController.m in Sources */,
+				B65F92641BB8042400D02A98 /* Post+CoreDataProperties.m in Sources */,
 				E4CCDB7D1B81AD43007B2E87 /* main.m in Sources */,
+				B65F925C1BB8030200D02A98 /* Model.xcdatamodeld in Sources */,
+				B65F92651BB8042400D02A98 /* Post.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -501,6 +523,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B65F925A1BB8030200D02A98 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B65F925B1BB8030200D02A98 /* Model.xcdatamodel */,
+			);
+			currentVersion = B65F925B1BB8030200D02A98 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = E4CCDB6F1B81AD43007B2E87 /* Project object */;
 }

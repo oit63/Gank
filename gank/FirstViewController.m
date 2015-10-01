@@ -13,16 +13,15 @@
 
 @interface FirstViewController ()
 @property (nonatomic) NSArray *timeZoneNames;
-
 @property (weak, nonatomic) IBOutlet UILabel *who;
 @property (weak, nonatomic) IBOutlet UILabel *publishedAt;
-
 @property (nonatomic) IBOutlet UITableView *tableView;
 @end
 
 @implementation FirstViewController
 @synthesize news;
 @synthesize tableView;
+
 /**
  *  viewdidload
  */
@@ -32,9 +31,14 @@
     [self afnetworkingGet];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    
 //    self.timeZoneNames = [NSTimeZone knownTimeZoneNames];
 }
+
+/**
+ *  get data and store to local
+ *
+ *  @return local
+ */
 
 /**
  * get
@@ -50,7 +54,6 @@
                               JSONObjectWithData:responseObject //1
                               options:NSJSONReadingAllowFragments
                               error:&error];
-        
         news = [json objectForKey:@"results"]; //2
             NSLog(@"results: %@", news); //3
         [tableView reloadData];
@@ -59,24 +62,43 @@
         NSLog(@"Fail");
     }];
 }
+
 - (void)translateToNSString:(NSData *)data {
     NSString *translatedStr = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     NSLog(translatedStr);
 }
+
 - (void)fetchedData:(NSData *)responseData {
     
 }
+
+/**
+ *  numbers of rows in sections
+ *
+ *  @param NSInteger section
+ *
+ *  @return cell count in the special section
+ */
 #pragma mark - Table
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of time zone names.
     return [news count];
 }
+
+/**
+ *  height for the row
+ *
+ *  @param tableView tanleview
+ *  @param indexPath index in a special section
+ *
+ *  @return cell of height
+ */
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [self tableView:tableView cellForRowAtIndexPath:indexPath];
     NSLog(@"cell height %f",cell.bounds.size.height);
     CGFloat height = cell.frame.size.height;
     if (height >= 80) {
-        return 100;
+        return 120;
     }else if (height >= 70) {
         return 100;
     } else if (height >= 60) {
@@ -89,6 +111,14 @@
     return 40;
 }
 
+/**
+ *  especial cell
+ *
+ *  @param tableView table
+ *  @param indexPath especial row
+ *
+ *  @return especial cell
+ */
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     /*
@@ -96,12 +126,8 @@
      The cell is defined in the main storyboard: its identifier is MyIdentifier, and  its selection style is set to None.
      */
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MyIdentifier"];
-    
-    
 //    NSLog(@"results: %@", news); //3
-
     //        NSMutableString *str = [NSMutableString stringWithCapacity:40];
-
     // Set up the cell.
     NSDictionary *iOSnews = [news objectAtIndex:indexPath.row];
     NSString * desc = [iOSnews objectForKey:@"desc"];
@@ -110,30 +136,39 @@
     cell.textLabel.lineBreakMode = UILineBreakModeWordWrap;
     cell.textLabel.numberOfLines = 11;
     cell.textLabel.text = desc;
-//
     cell.frame = CGRectMake(0, 0, 320,[cell.textLabel.text boundingRectWithSize: CGSizeMake(320, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading attributes:[NSDictionary dictionaryWithObjectsAndKeys:cell.textLabel.font, NSFontAttributeName, nil] context:nil].size.height);
 //   NSLog(@"cell faf %f",cell.frame.size.height);
-//
 //    label.textAlignment = NSTextAlignmentLeft;
 //    label.text = @"Here who";
-
     return cell;
 }
 
+/**
+ *  selected
+ *
+ *  @param tableView current tableview
+ *  @param indexPath especial index
+ */
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSDictionary *iOSnews = [news objectAtIndex:indexPath.row];
     NSString *urlString = [iOSnews objectForKey:@"url"];
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     WebViewController *webViewController = [storyboard instantiateViewControllerWithIdentifier:@"WebView"];
     webViewController.urlString = urlString;
-
     [self.navigationController pushViewController:webViewController animated:YES];
 }
 
+/**
+ *  memory spent too much
+ */
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+/**
+ *  not use now
+ */
 - (void)enumNews {
     for (NSDictionary *result in news) {
         NSLog(@"标题名称：《%@》, 作者: %@, 发表于：%@,  网址：%@， ",[result objectForKey:@"desc"],[result objectForKey:@"who"],[result objectForKey:@"publishedAt"],[result objectForKey:@"url"]);
@@ -142,4 +177,5 @@
         NSLog(@"%@",publishedTime);
     }
 }
+
 @end
